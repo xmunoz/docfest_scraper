@@ -13,11 +13,15 @@ NEWSPIDER_MODULE = 'docfest.spiders'
 
 ITEM_PIPELINES = ['docfest.pipelines.DocfestPipeline']
 
-#I believe that this setting is broken currently. See scrapy project on github. -x
+#disable 302s
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.contrib.downloadermiddleware.redirect.RedirectMiddleware': None,
+}
+
 LOG_STDOUT = True
 
 DOWNLOAD_TIMEOUT = 5
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
+
 USER_AGENT = 'mcmguaba (+http://www.mcmguaba.com)'
 
 DF_LOG_FILE = '/var/log/scrapy/docfest.log'
