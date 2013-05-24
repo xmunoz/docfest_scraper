@@ -10,7 +10,7 @@ class DocfestPipeline(object):
         '''
         Write data to file
         '''
-        self.f = open('/var/www/mcmguaba/docfest/dumped_screenings.json', 'w')
+        self.f = open('../dumped_screenings.json', 'w')
         self.all_items = []
         
     def process_item(self, item, spider):
