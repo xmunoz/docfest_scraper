@@ -105,10 +105,11 @@ class DocfestSpider(CrawlSpider):
         '''
         Parse and format screening time
         '''
-        start_time = screening.select('div[@class="DateTime"]/text()').re('(\d*):00 PM')
-        int_start_time = self._format_output(start_time[0]) if start_time else None
-        # all of the screenings are in the afternoon, therefore '7 PM' => time(19)
-        item['start_time'] = time(12 + int(int_start_time)) 
+        start_time = screening.select('div[@class="DateTime"]/text()').re('(\d*):(\d*) PM')
+        int_start_time_hr = self._format_output(start_time[0]) if start_time else None
+        int_start_time_min = self._format_output(start_time[1]) if start_time else None
+        # all of the screenings are in the afternoon, therefore '7:15 PM' => time(19, 15)
+        item['start_time'] = time(12 + int(int_start_time_hr), int(int_start_time_min))
     
     def _set_duration(self, item, screening):
         '''

@@ -10,7 +10,7 @@ class DocfestPipeline(object):
         '''
         Write data to file
         '''
-        self.f = open('../dumped_screenings.json', 'w')
+        self.f = open('../../dumped_screenings.json', 'w')
         self.all_items = []
         
     def process_item(self, item, spider):
@@ -26,7 +26,8 @@ class DocfestPipeline(object):
         #compute end time from start time and duration
         end_datetime = start_datetime + item['duration']
         end_datetime_formatted = end_datetime.strftime(datetime_format)
-        
+       
+        #format for use with google calendar api -- post events endpoint
         self.all_items.append({
             "end": {"dateTime": end_datetime_formatted},
             "start": {"dateTime": start_datetime_formatted},
