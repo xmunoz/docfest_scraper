@@ -12,8 +12,9 @@ Want to run the scraper for yourself?
 
 1.  Generate a valid epguid param in your browser and paste it in [here](https://github.com/mcmguaba/docfest_scraper/blob/master/docfest/spiders/doc_screenings.py#L31). 
 2.  In that same browser window, inspect your cookie and put that value in [here](https://github.com/mcmguaba/docfest_scraper/blob/master/docfest/spiders/doc_screenings.py#L48).
-3.  Run the scraper from the command line anywhere inside the scrapy project directory.
-            scrapy crawl dfs
+3.  Run the scraper from the command line anywhere inside the scrapy project directory:
+            
+            root@artemis:~/docfest# scrapy crawl dfs
 
 
 Happy scraping!
