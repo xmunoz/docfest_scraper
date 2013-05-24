@@ -9,11 +9,12 @@ Ultimately this was a quick and dirty project. There is literally no error handl
 cmnip8vlkc6gqdtjock584mlug@group.calendar.google.com
 
 Want to run the scraper for yourself? 
+
 1.  Generate a valid epguid param in your browser and paste it in [here](https://github.com/mcmguaba/docfest_scraper/blob/master/docfest/spiders/doc_screenings.py#L31). 
 2.  In that same browser window, inspect your cookie and put that value in [here](https://github.com/mcmguaba/docfest_scraper/blob/master/docfest/spiders/doc_screenings.py#L48).
 3.  Run the scraper from the command line anywhere inside the scrapy project directory.
-```
-scrapy crawl dfs
-```
+      ```
+      scrapy crawl dfs
+      ```
 
 Happy scraping!
